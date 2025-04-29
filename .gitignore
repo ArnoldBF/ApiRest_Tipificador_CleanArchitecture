@@ -1,0 +1,92 @@
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos de configuración de usuario
+.vscode/
+*.user
+*.suo
+
+# Archivos de compilación
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.cache
+*.log
+
+# Archivos de configuración de entorno
+.env
+*.env
+
+# Archivos de configuración de la aplicación
+appsettings.json
+appsettings.Development.json
+appsettings.*.json
+
+# Archivos generados por herramientas de compilación
+*.nuget.g.props
+*.nuget.g.targets
+*.nuget.dgspec.json
+*.csproj.nuget.cache
+*.csproj.nuget.dgspec.json
+*.csproj.nuget.g.props
+*.csproj.nuget.g.targets
+
+# Archivos de configuración de MSBuild
+*.GeneratedMSBuildEditorConfig.editorconfig
+*.AssemblyInfoInputs.cache
+*.CoreCompileInputs.cache
+*.genruntimeconfig.cache
+
+# Archivos de configuración de EF Core
+*.EntityFrameworkCore.targets
+
+# Archivos de configuración de Static Web Assets
+staticwebassets/
+staticwebassets.build.json
+staticwebassets.build.endpoints.json
+staticwebassets.development.json
+
+# Archivos de configuración de depuración
+*.deps.json
+*.runtimeconfig.json
+*.runtimeconfig.dev.json
+
+# Archivos de configuración de OpenAPI
+MyApi.Api.http
+
+# Archivos de configuración de compilación
+*.FileListAbsolute.txt
+*.AssemblyAttributes.cs
+*.MvcApplicationPartsAssemblyInfo.cs
+
+# Archivos de paquetes NuGet
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+
+# Archivos de publicación
+publish/
+wwwroot/
+
+# Archivos de logs
+*.log
+
+# Archivos temporales
+*.tmp
+*.temp
+*.pid
+*.seed
+*.pid.lock
+
+# Archivos de configuración de IDE
+.idea/
+*.iml
+
+# Archivos de licencia y terceros
+LICENSE.TXT
+THIRD-PARTY-NOTICES.TXT
