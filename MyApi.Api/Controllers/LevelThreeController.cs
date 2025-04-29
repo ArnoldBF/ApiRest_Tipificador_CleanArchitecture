@@ -22,6 +22,18 @@ namespace MyApi.Api.Controllers
         {
             return await _levelThreeService.GetAllLevelThreeAsync();
         }
+        [HttpGet("by-level-two/{levelTwoId}")]
+        public async Task<ActionResult<List<LevelThree>>> GetLevelThreesByLevelTwoId(int levelTwoId)
+        {
+            var levelThrees = await _levelThreeService.GetLevelThreesByLevelTwoIdAsync(levelTwoId);
+
+            if (levelThrees == null || !levelThrees.Any())
+            {
+                return NotFound(new { message = $"No LevelThree records found for LevelTwoId {levelTwoId}" });
+            }
+
+            return Ok(levelThrees);
+        }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<LevelThree>> GetLevelThreeByIdAsync(int id)

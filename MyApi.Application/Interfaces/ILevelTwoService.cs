@@ -12,5 +12,6 @@ namespace MyApi.Application.Interfaces
         Task<IEnumerable<LevelTwo>> GetAllLevelTwoAsync();
         Task<LevelTwo> GetLevelTwoByIdAsync(int id);
         Task<LevelTwo> CreateLevelTwoAsync(LevelTwo levelTwo);
+        Task<List<LevelTwo>> GetLevelTwosByLevelOneIdAsync(int levelOneId);
     }
 }

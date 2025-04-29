@@ -6,5 +6,6 @@ namespace MyApi.Application.Interfaces
     {
 
         Task<List<LevelThree>> GetAllLevelThreeWithLevelTwoAsync();
+        Task<List<LevelThree>> GetLevelThreesByLevelTwoIdAsync(int levelTwoId);
     }
 }

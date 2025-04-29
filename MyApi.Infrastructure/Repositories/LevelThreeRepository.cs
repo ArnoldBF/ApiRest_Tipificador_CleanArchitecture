@@ -16,6 +16,12 @@ namespace MyApi.Infrastructure.Repositories
         {
             return await _context.LevelThrees.Include(ssc => ssc.LevelTwo).ToListAsync();
         }
+        public async Task<List<LevelThree>> GetLevelThreesByLevelTwoIdAsync(int levelTwoId)
+        {
+            return await _context.LevelThrees
+                .Where(l3 => l3.LevelTwoId == levelTwoId)
+                .ToListAsync();
+        }
 
     }
 }

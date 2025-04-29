@@ -37,5 +37,10 @@ namespace MyApi.Application.Services
             return levelTwo;
         }
 
+        public async Task<List<LevelTwo>> GetLevelTwosByLevelOneIdAsync(int levelOneId)
+        {
+            return await _levelTwoRepository.GetLevelTwosByLevelOneIdAsync(levelOneId);
+        }
+
     }
 }

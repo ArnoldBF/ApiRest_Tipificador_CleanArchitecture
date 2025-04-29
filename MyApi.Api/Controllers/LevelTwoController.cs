@@ -24,6 +24,18 @@ namespace MyApi.Api.Controllers
 
             return Ok(levelTwos);
         }
+        [HttpGet("by-level-one/{levelOneId}")]
+        public async Task<ActionResult<List<LevelTwo>>> GetLevelTwosByLevelOneId(int levelOneId)
+        {
+            var levelTwos = await _levelTwoService.GetLevelTwosByLevelOneIdAsync(levelOneId);
+
+            if (levelTwos == null || !levelTwos.Any())
+            {
+                return NotFound(new { message = $"No LevelTwo records found for LevelOneId {levelOneId}" });
+            }
+
+            return Ok(levelTwos);
+        }
 
         [HttpGet("with-level-threes")]
         public async Task<ActionResult<List<LevelTwo>>> GetLevelTwosWithLevelThree()

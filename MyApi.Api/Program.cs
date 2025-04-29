@@ -10,13 +10,19 @@ using System.Text;
 
 
 var builder = WebApplication.CreateBuilder(args);
-// DotNetEnv.Env.Load();
-// builder.Configuration.AddEnvironmentVariables();
-// builder.Configuration.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-// .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
-// .AddEnvironmentVariables();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins",
+        builder =>
+        {
+            builder.AllowAnyOrigin()
+                   .AllowAnyMethod()
+                   .AllowAnyHeader();
+        });
 
-// Add services to the container.
+});
+
+
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddDbContext<AppDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -77,6 +83,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors("AllowAllOrigins");
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();

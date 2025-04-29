@@ -26,5 +26,12 @@ namespace MyApi.Infrastructure.Repositories
             return await _context.LevelTwos.Include(sc => sc.LevelThrees).FirstOrDefaultAsync(sc => sc.Id == id) ?? throw new KeyNotFoundException($"Entity with id {id} not found.");
         }
 
+        public async Task<List<LevelTwo>> GetLevelTwosByLevelOneIdAsync(int levelOneId)
+        {
+            return await _context.LevelTwos
+                .Where(l2 => l2.LevelOneId == levelOneId)
+                .ToListAsync();
+        }
+
     }
 }

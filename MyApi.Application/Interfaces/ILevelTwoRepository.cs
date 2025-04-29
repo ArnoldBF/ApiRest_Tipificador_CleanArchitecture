@@ -11,5 +11,7 @@ namespace MyApi.Application.Interfaces
         Task<List<LevelTwo>> GetAllLevelTwoWithLevelThreeAsync();
 
         Task<LevelTwo> GetLevelTwoByIdAsync(int id);
+
+        Task<List<LevelTwo>> GetLevelTwosByLevelOneIdAsync(int levelOneId);
     }
 }
