@@ -33,6 +33,7 @@ namespace MyApi.Api.Controllers
             {
                 Name = dto.Name,
                 LastName = dto.LastName,
+                Email = dto.Email,
                 User = dto.User != null
                 ? new User
                 {
